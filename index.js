@@ -8,15 +8,7 @@
 //     return gifts;
 //   }
 
-function exerciseDog(dogName, dogBreed) {
-    let i = 0
-    while (i < routine.length) {
-        routine[i](dogName, dogBreed);
-        i++;
-    }
-}
 
-const routine = [wakeDog, leashDog, walkToPark, throwFrisbee, walkHome, unleashDog]
 
 function wakeDog(dogName, dogBreed) {
     console.log(`Wake ${dogName} the ${dogBreed}`);
@@ -47,3 +39,18 @@ function unleashDog(dogName, dogBreed) {
     console.log(`Unleash ${dogName} the ${dogBreed}`);
     return `Unleash ${dogName} the ${dogBreed}`
 }
+
+const routine = [wakeDog, leashDog, walkToPark, throwFrisbee, walkHome, unleashDog]
+
+function exerciseDog(dogName, dogBreed) {
+    return routine.map(func => {
+        return func(dogName, dogBreed)
+    })
+}
+
+    // let i = 0;
+    // while (i < routine.length) {
+    //     console.log("Test string ", routine[i])
+    //     routine[i](dogName, dogBreed);
+    //     i++;
+    // }
